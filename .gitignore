@@ -18,6 +18,11 @@
 # Output files from R CMD check
 /*.Rcheck/
 
+
+# output
+/*/figure-html/
+/*.html
+
 # RStudio files
 .Rproj.user/
 
