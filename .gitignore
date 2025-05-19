@@ -22,8 +22,8 @@
 # output
 /*/figure-html/
 /*.html
-/Tutorials/random_fields_1d/
-/Tutorials/random_fields_2d/
+/Tutorials/random_fields_1d_files/
+/Tutorials/random_fields_2d_files/
 # RStudio files
 .Rproj.user/
 
