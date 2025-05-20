@@ -117,7 +117,7 @@ You should get a plot like that below. The `gg` method for `sf` point data takes
 an optional argument `geom = "tile"` that converts the plot to the type used for lattice data.
 
 ```{r results="hide",warning=FALSE,message=FALSE, fig.height=4,fig.width=9}
-pred <- predict(
+pred <- predict( #LH: ?predict.bru for help
   fit,
   fm_pixels(mesh, mask = boundary),
   ~ data.frame(
@@ -137,6 +137,15 @@ pl2 <- ggplot() +
   ggtitle("LGCP fit to Points", subtitle = "(Linear Predictor Scale)")
 
 multiplot(pl1, pl2, cols = 2)
+```
+
+
+```{r results="hide",warning=FALSE,message=FALSE, fig.height=4,fig.width=9}
+#LH: alt
+ggplot() +
+  gg(pred$lambda, geom = "tile") +
+  geom_sf(data = boundary, alpha = 0.1) +
+  ggtitle("LGCP fit to Points", subtitle = "(Response Scale)") + scale_fill_gradient(trans = "log")
 ```
 
 You can plot the median, lower 95% and upper 95% density surfaces as follows (assuming
